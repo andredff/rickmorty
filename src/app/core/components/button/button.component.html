@@ -1,5 +1,8 @@
 <button [routerLink]="link()" [type]="type()" [class]="classeCss" [ngStyle]="dynamicStyles">
   <i class="material-icons">{{ icon() }}</i>
-  {{ label() }}
+  <span>{{ label() }}</span>
+  <span *ngIf="count()" class="count-badge">
+    {{ count() }}
+  </span>
 
 </button>

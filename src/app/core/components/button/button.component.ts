@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 export class ButtonComponent implements OnInit {
   label = input<string>();
   icon = input<string>();
+  count = input<number | undefined>();
   link = input<string | string[]>();
   type = input<string>('button');
   buttonType = input<'primary' | 'secondary'>('primary');

@@ -1,0 +1,13 @@
+<div class="favorites-list">
+  <ul *ngIf="favorites$ | async as favorites">
+    <li *ngFor="let character of favorites">
+      <img [src]="character.image" [alt]="character.name" />
+      <span>{{ character.name }}</span>
+      <button (click)="removeFavorite(character.id)">Remove</button>
+    </li>
+  </ul>
+
+  <div *ngIf="(favorites$ | async)?.length === 0" class="no-favorites">
+    No favorites added.
+  </div>
+</div>
