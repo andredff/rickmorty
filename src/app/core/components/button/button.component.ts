@@ -11,11 +11,11 @@ import { RouterLink } from '@angular/router';
 export class ButtonComponent implements OnInit {
   @Input() buttonClass: string = '';
   label = input<string>();
-  icon = input<string>();
   count = input<number | undefined>();
   link = input<string | string[]>();
   isActive = input<boolean>(false);
   type = input<string>('button');
+  icon = input<string>('');
 
 
   ngOnInit(): void {

@@ -8,6 +8,7 @@
       [buttonClass]="'first-button'"
       type="button"
       label="Inicio"
+      icon="home"
       link="/"
       [isActive]="checkActiveRoute('/')"
     />
@@ -15,6 +16,7 @@
       [buttonClass]="'last-button'"
       type="button"
       label="Favoritos"
+      icon="favorite"
       link="favoritos"
       [count]="(favoritesCount$ | async) ?? 0"
       [isActive]="checkActiveRoute('/favoritos')"

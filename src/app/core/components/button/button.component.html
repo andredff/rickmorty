@@ -1,7 +1,9 @@
 <button [routerLink]="link()" [type]="type()" [ngClass]="[buttonClass]" [class.active]="isActive()">
-  <i class="material-icons">{{ icon() }}</i>
-  <span>{{ label() }}</span>
-  <span *ngIf="count()" class="count-badge">
-    <label>{{ count() }}</label>
-  </span>
+  <div style="font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48">
+    <span class="material-symbols-outlined"> {{ icon() }} </span>
+    <span>{{ label() }}</span>
+    <span *ngIf="count()" class="count-badge">
+      <label>{{ count() }}</label>
+    </span>
+  </div>
 </button>
