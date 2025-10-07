@@ -8,6 +8,7 @@
   transition: transform 0.2s ease;
   background-color: black;
   cursor: pointer;
+  max-width: 500px;
 
   &:hover {
     transform: scale(1.05);
@@ -55,8 +56,30 @@
     top: 8px;
     right: 8px;
     cursor: pointer;
+    z-index: 9999999;
   }
 }
+
+  .additional-info {
+    margin-top: 20px;
+    text-align: left;
+
+    p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
 
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
@@ -72,3 +95,4 @@
   white-space: nowrap;
   direction: ltr;
 }
+

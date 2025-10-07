@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CharacterService } from '../../services/character.service';
 import { FavoritesService } from '../../services/favorites.service';
 import { Observable } from 'rxjs';
-import { CharacterCardComponent } from '../characterCard/character-card.component';
+import { CharacterCardComponent } from '../character-card/character-card.component';
 
 @Component({
   selector: 'app-character-list',
@@ -18,7 +18,7 @@ export class CharacterListComponent implements OnInit {
 
   constructor(
     private characterService: CharacterService,
-    public favoritesService: FavoritesService
+    public favoritesService: FavoritesService,
   ) {
     this.characters$ = this.characterService.results$;
   }

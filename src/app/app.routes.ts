@@ -9,8 +9,13 @@ export const routes: Routes = [
   {
     path: 'favoritos',
     loadChildren: () =>
-      import('./core/pages/favorites/favorites-module').then(
+      import('./core/pages/favorites/favorites.module').then(
         (m) => m.FavoritesModule
       ),
+  },
+  {
+    path: 'personagem/:id',
+    loadChildren: () =>
+      import('./core/pages/details/details.module').then((m) => m.DetailsModule),
   },
 ];

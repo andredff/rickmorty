@@ -76,4 +76,9 @@ export class CharacterService {
   clearResults(): void {
     this.searchResults.next([]); // Define os resultados como um array vazio
   }
+
+  getCharacterById(id: string): Observable<any> {
+    console.log('Fetching character with ID:', id); // Verifique se o ID está correto
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
 }

@@ -24,11 +24,11 @@ button {
   }
 
   &.active {
-    background-color: #ffffff;
-    color: #0a0a0a;
+    background-color: var(--button-bg-active);
+    color: var(--badge-text);
 
     .count-badge {
-      border: 1px solid #3d3d3d;
+      border: 1px solid var(--icon-color);
     }
   }
 }
@@ -46,9 +46,9 @@ button {
 }
 
 .count-badge {
-  border: 1px solid #ffffff;
-  background-color: #ffffff;
-  color: #0a0a0a;
+  border: 1px solid var(--color-white);
+  background-color: var(--color-white);
+  color: var(--badge-text);
   font-weight: 700;
   font-size: 12px;
   width: 20px;

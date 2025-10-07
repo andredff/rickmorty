@@ -1,0 +1,14 @@
+<ng-container *ngIf="character$ | async as character; else loading">
+  <div class="character-detail">
+    <button [routerLink]="'/'">Voltar</button>
+    <app-character-card
+      [character]="character"
+      [isFavorite]="isFavorite(character.id)"
+      (action)="toggleFavorite($event)"
+      ></app-character-card>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <p>Carregando detalhes do personagem...</p>
+</ng-template>

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { FavoritesList } from "../../components/favoritesList/favorites-list.component";
+import { FavoritesListComponent } from "../../components/favorites-list/favorites-list.component";
 
 @Component({
   selector: 'app-favorites-list',
-  imports: [FavoritesList],
+  imports: [FavoritesListComponent],
   templateUrl: './favorites.component.html',
   styleUrl: './favorites.component.scss'
 })

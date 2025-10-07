@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FavoritesService } from '../../services/favorites.service';
 import { Observable } from 'rxjs';
-import { CharacterCardComponent } from '../characterCard/character-card.component';
+import { CharacterCardComponent } from '../character-card/character-card.component';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './favorites-list.component.html',
   styleUrls: ['./favorites-list.component.scss'],
 })
-export class FavoritesList {
+export class FavoritesListComponent {
   favorites$: Observable<any[]>;
 
   constructor(private favoritesService: FavoritesService, public router: Router) {
