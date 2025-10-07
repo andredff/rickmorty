@@ -1,32 +1,10 @@
 button {
   cursor: pointer;
-  border-radius: 8px;
   font-family: var(--font-poppins);
-}
-
-.primary-button {
-  background-color: var(--color-white);
-  font-weight: 600;
-  padding: 4px 16px;
-  border: none;
-  color: #0A0A0A;
-  // width: 99px;
-  height: 40px;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.secondary-button {
-  background-color: transparent;
   font-weight: 600;
   padding: 4px 16px;
   border: none;
   color: var(--color-secondary);
-  // width: 99px;
   height: 40px;
   text-align: center;
   display: block;
@@ -34,5 +12,44 @@ button {
   text-align: center;
   text-decoration: none;
   font-size: 14px;
+  background-color: transparent;
   border: 1px solid var(--color-secondary);
+  padding: 8px 16px;
+}
+
+.first-button {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-right: none;
+}
+
+.last-button {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-left: none;
+  .count-badge {
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    font-weight: 700;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    padding: 0 4px;
+    margin-left: 8px;
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px;
+    }
+  }
+}
+
+.active {
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+  .count-badge {
+    border: 1px solid #3D3D3D;
+  }
 }
