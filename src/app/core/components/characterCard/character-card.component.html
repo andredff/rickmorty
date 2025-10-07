@@ -1,0 +1,16 @@
+<div class="character-card">
+  <!-- Ícone de coração no canto superior direito -->
+  <div class="favorite-icon" (click)="onAction()">
+    <i class="material-icons" [class.filled]="isFavorite">
+      {{ isFavorite ? 'favorite' : 'favorite_border' }}
+    </i>
+  </div>
+
+  <!-- Imagem e informações do personagem -->
+  <img [src]="character.image" [alt]="character.name" class="character-image" />
+  <div class="character-info">
+    <h3>{{ character.name }}</h3>
+    <p>Status: {{ character.status }}</p>
+    <p>Species: {{ character.species }}</p>
+  </div>
+</div>

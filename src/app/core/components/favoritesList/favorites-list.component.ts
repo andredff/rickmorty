@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FavoritesService } from '../../services/favorites.service';
 import { Observable } from 'rxjs';
+import { CharacterCardComponent } from '../characterCard/character-card.component';
 
 @Component({
   selector: 'app-favorite-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CharacterCardComponent],
   templateUrl: './favorites-list.component.html',
   styleUrls: ['./favorites-list.component.scss'],
 })

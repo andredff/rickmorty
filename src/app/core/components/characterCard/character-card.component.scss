@@ -1,0 +1,57 @@
+.character-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  background-color: black;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .character-image {
+    width: 100%;
+  }
+
+  .character-info {
+    text-align: left;
+    width: 100%;
+
+    h3 {
+      color: white;
+      font-family: var(--font-creepster);
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 4px 0;
+      color: #666;
+      font-size: 14px;
+    }
+  }
+
+  .favorite-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+
+    i {
+      font-size: 24px;
+      color: #ccc;
+      transition: color 0.2s ease;
+
+      &.filled {
+        color: #ff4d4d; /* Cor do coração preenchido */
+      }
+
+      &:hover {
+        color: #ff4d4d; /* Cor ao passar o mouse */
+      }
+    }
+  }
+}

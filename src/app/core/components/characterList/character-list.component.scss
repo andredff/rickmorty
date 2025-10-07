@@ -1,32 +1,7 @@
 .character-list {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 16px;
-  ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // Define 3 colunas de tamanhos iguais
-    // gap: 16px; // Espaçamento entre os itens
-    list-style: none;
-    padding: 0;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      img {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 8px;
-      }
-    }
-  }
-
-  .no-results {
-    text-align: center;
-    color: #999;
-    margin-top: 16px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  gap: 16px;
+  justify-content: center;
 }
+
