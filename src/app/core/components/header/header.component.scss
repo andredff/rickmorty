@@ -1,0 +1,18 @@
+.header {
+  background-color: #0A0A0A;
+  border: bottom 1px solid #3D3D3D;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+
+  .button-group {
+    display: flex;
+    gap: 0;
+  }
+}
+
+p {
+  color: white;
+}
