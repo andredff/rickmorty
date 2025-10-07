@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SubtitleComponent } from "../subtitle/subtitle.component";
 
 @Component({
   selector: 'app-character-card',
   standalone: true,
-  imports: [CommonModule, SubtitleComponent],
+  imports: [CommonModule],
   templateUrl: './character-card.component.html',
   styleUrls: ['./character-card.component.scss'],
 })

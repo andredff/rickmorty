@@ -1,0 +1,17 @@
+.favorites-header {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+
+  h3 {
+    font-family: var(--font-creepster);
+    color: #00B5CC;
+    -webkit-text-stroke: 1px #B2DF28;
+    margin: 0;
+    font-size: 48px;
+    font-weight: 600;
+  }
+}
