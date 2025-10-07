@@ -12,9 +12,6 @@ import { CharacterService } from '../../services/character.service';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  isFloating(isFloating: any) {
-    throw new Error('Method not implemented.');
-  }
   private searchTerms = new Subject<string>(); // Fluxo de termos de busca
 
   constructor(private characterService: CharacterService) {
@@ -31,16 +28,18 @@ export class SearchComponent {
 
   // Realiza a busca inicial
   private performSearch(term: string): void {
-    if (term.trim()) {
-      this.characterService.searchCharacters(term, true).subscribe({
-        next: () => {
-          console.log('Search initialized with query:', term);
-        },
-        error: (err) => {
-          console.error('Error during search:', err);
-        },
-      });
-    }
+    this.characterService.searchCharacters(term.trim(), true).subscribe({
+      next: () => {
+        console.log(
+          term.trim()
+            ? `Search initialized with query: ${term}`
+            : 'Search initialized without filters'
+        );
+      },
+      error: (err) => {
+        console.error('Error during search:', err);
+      },
+    });
   }
 
   // Método chamado no evento de input

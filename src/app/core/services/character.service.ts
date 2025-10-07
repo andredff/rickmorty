@@ -28,6 +28,11 @@ export class CharacterService {
       return new Observable((observer) => observer.complete()); // Retorna um Observable vazio se não houver mais resultados
     }
 
+    // Se o termo de busca estiver vazio, faz um getAll
+    if (!query.trim()) {
+      return this.fetchAllCharacters();
+    }
+
     return this.fetchCharacters();
   }
 
@@ -44,9 +49,17 @@ export class CharacterService {
     this.currentQuery = query; // Atualiza o termo de busca
   }
 
-  // Realiza a chamada à API
+  // Realiza a chamada à API para buscar personagens com filtro
   private fetchCharacters(): Observable<any> {
     const url = `${this.apiUrl}?name=${this.currentQuery}&page=${this.currentPage}`;
+    return this.http.get<Character>(url).pipe(
+      tap((response) => this.handleResponse(response))
+    );
+  }
+
+  // Realiza a chamada à API para buscar todos os personagens
+  private fetchAllCharacters(): Observable<any> {
+    const url = `${this.apiUrl}?page=${this.currentPage}`;
     return this.http.get<Character>(url).pipe(
       tap((response) => this.handleResponse(response))
     );
@@ -58,5 +71,9 @@ export class CharacterService {
     this.searchResults.next([...currentResults, ...response.results]); // Concatena os resultados
     this.hasMoreResults = !!response.info.next; // Verifica se há mais páginas
     this.currentPage++; // Incrementa a página
+  }
+
+  clearResults(): void {
+    this.searchResults.next([]); // Define os resultados como um array vazio
   }
 }

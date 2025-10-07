@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
   gap: 16px;
-  padding: 16px;
   justify-content: left;
 
   @media (min-width: 768px) {
