@@ -1,7 +1,11 @@
 .character-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // Responsivo: mínimo 250px por card
-  gap: 16px; // Espaçamento entre os cards
+  grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  gap: 16px;
   padding: 16px;
-  justify-content: center; // Centraliza os cards horizontalmente
+  justify-content: left;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

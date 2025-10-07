@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharacterService } from '../../services/character.service';
 import { FavoritesService } from '../../services/favorites.service';
@@ -12,7 +12,7 @@ import { CharacterCardComponent } from '../characterCard/character-card.componen
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.scss'],
 })
-export class CharacterListComponent {
+export class CharacterListComponent implements OnInit {
   characters$: Observable<any>; // Inscreve-se nos resultados da busca
   isLoading: boolean = false; // Controle para evitar chamadas duplicadas
 
@@ -21,6 +21,18 @@ export class CharacterListComponent {
     public favoritesService: FavoritesService
   ) {
     this.characters$ = this.characterService.results$;
+  }
+
+  ngOnInit(): void {
+    // Carrega os personagens ao inicializar o componente
+    this.characterService.searchCharacters('', true).subscribe({
+      next: () => {
+        console.log('Initial characters loaded');
+      },
+      error: (err) => {
+        console.error('Error loading initial characters:', err);
+      },
+    });
   }
 
   // Adiciona ou remove um personagem dos favoritos
