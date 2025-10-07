@@ -1,27 +1,35 @@
-
 button {
   cursor: pointer;
   font-family: var(--font-poppins);
   font-weight: 600;
-  padding: 4px 16px;
-  border: none;
-  color: var(--color-secondary);
-  height: 40px;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  text-decoration: none;
   font-size: 14px;
+  color: var(--color-secondary);
   background-color: transparent;
   border: 1px solid var(--color-secondary);
   padding: 8px 16px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   div {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
+
+  }
+
+  &.active {
+    background-color: #ffffff;
+    color: #0a0a0a;
+
+    .count-badge {
+      border: 1px solid #3d3d3d;
+    }
   }
 }
 
@@ -35,39 +43,30 @@ button {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   border-left: none;
-  .count-badge {
-    border: 1px solid #FFFFFF;
-    background-color: #FFFFFF;
-    color: #0A0A0A;
-    font-weight: 700;
-    padding: 4px;
-    width: 20px;
-    height: 20px;
-    border-radius: 100px;
-    padding: 0 4px;
-    margin-left: 8px;
-    label {
-      font-size: 12px;
-      font-weight: 600;
-      padding: 2px;
-    }
+}
+
+.count-badge {
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  font-weight: 700;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  transition: border 0.3s ease;
+
+  label {
+    font-size: 12px;
+    font-weight: 600;
   }
 }
 
-button.active {
-  background-color: #FFFFFF;
-  color: #0A0A0A;
-  .count-badge {
-    border: 1px solid #3D3D3D;
-  }
-}
-
-svg {
-  width: 24px;
-  height: 24px;
-  fill: #A4A4A4;
-}
-
-svg.active {
-  fill: #0A0A0A;
+.material-symbols-outlined {
+  font-size: 20px;
+  padding: 0 8px 0 0;
 }

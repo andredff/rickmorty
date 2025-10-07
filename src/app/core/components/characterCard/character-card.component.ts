@@ -10,12 +10,12 @@ import { TruncatePipe } from '../../pipes/truncate.pipe';
   styleUrls: ['./character-card.component.scss'],
 })
 export class CharacterCardComponent {
-  @Input() character: any; // Dados do personagem
-  @Input() isFavorite: boolean = false; // Indica se o personagem é favorito
-  @Input() actionLabel: string = 'Add'; // Texto do botão (ex.: "Add" ou "Remove")
-  @Output() action = new EventEmitter<any>(); // Evento para ações (add/remove)
+  @Input() character: any;
+  @Input() isFavorite: boolean = false;
+  @Input() actionLabel: string = 'Add';
+  @Output() action = new EventEmitter<any>();
 
   onAction(): void {
-    this.action.emit(this.character); // Emite o evento com os dados do personagem
+    this.action.emit(this.character);
   }
 }

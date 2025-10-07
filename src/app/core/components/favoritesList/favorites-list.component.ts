@@ -20,7 +20,6 @@ export class FavoritesList {
     });
   }
 
-
   // Remove um personagem dos favoritos
   removeFavorite(characterId: number): void {
     this.favoritesService.removeFavorite(characterId);
