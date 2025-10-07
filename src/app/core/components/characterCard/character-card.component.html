@@ -9,8 +9,10 @@
   <!-- Imagem e informações do personagem -->
   <img [src]="character.image" [alt]="character.name" class="character-image" />
   <div class="character-info">
-    <h3>{{ character.name }}</h3>
-    <p>Status: {{ character.status }}</p>
-    <p>Species: {{ character.species }}</p>
+    <div>
+      <h3>{{ character.name | truncate:19 }}</h3>
+      <p>Status: {{ character.status }}</p>
+      <p>Species: {{ character.species }}</p>
+    </div>
   </div>
 </div>

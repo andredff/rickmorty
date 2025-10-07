@@ -22,17 +22,30 @@
     width: 100%;
     padding: 8px;
 
+    div {
+      padding: 0 12px;
+    }
+
     h3 {
       color: white;
       font-family: var(--font-creepster);
-      margin: 8px 0;
-      font-size: 18px;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 100%;
+      letter-spacing: -0.02em;
+      margin: 8px 0 28px;
     }
 
     p {
-      margin: 4px 0;
       color: #666;
-      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 60%;
+      letter-spacing: 0px;
+      margin: 0 0 12px;
     }
   }
 
@@ -48,11 +61,11 @@
       transition: color 0.2s ease;
 
       &.filled {
-        color: #ff4d4d; /* Cor do coração preenchido */
+        color: #ff4d4d;
       }
 
       &:hover {
-        color: #ff4d4d; /* Cor ao passar o mouse */
+        color: #ff4d4d;
       }
     }
   }
