@@ -22,7 +22,6 @@ export class HeaderComponent {
   }
 
   checkActiveRoute(route: string): boolean {
-    console.log(this.router.url === route)
     return this.router.url === route;
   }
 }
