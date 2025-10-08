@@ -9,6 +9,17 @@
     "backToHome": "Back to Home",
     "emptySearch": "No results found.",
     "tryAgain": "Try searching with another term.",
-    "back": "Back"
-  }
+    "back": "Back",
+    "status": "Status",
+    "gender": "Gender",
+    "origin": "Origin",
+    "currentLocation": "Current Location"
+  },
+  "Human": "Human",
+  "Alien": "Alien",
+  "Alive": "Alive",
+  "Dead": "Dead",
+  "unknown": "unknown",
+  "Male": "Male",
+  "Earth": "Earth"
 }

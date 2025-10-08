@@ -22,15 +22,14 @@
     <div class="character-info">
       <div>
         <h2>{{ character.name | truncate : 19 }}</h2>
-        <h3> {{ character.species }}</h3>
+        <h3 [innerHTML]="character.species | translate"></h3>
 
       <ng-container *ngIf="showAdditionalInfo">
         <p *ngIf="character.type"><strong>Type:</strong> {{ character.type }}</p>
-        <p><strong>Status:</strong> {{ character.status }}</p>
-        <p><strong>Gênero:</strong> {{ character.gender }}</p>
-        <p><strong>Status:</strong> {{ character.status }}</p>
-        <p><strong>Origem:</strong> {{ character.origin.name }}</p>
-        <p><strong>Localização Atual:</strong> {{ character.location.name }}</p>
+        <p><strong>{{ 'app.status' | translate }}: </strong> <span [innerHTML]="character.status | translate"></span></p>
+        <p><strong>{{ 'app.gender' | translate }}: </strong> <span [innerHTML]="character.gender | translate"></span></p>
+        <p><strong>{{ 'app.origin' | translate }}: </strong> <span [innerHTML]="character.origin.name | translate"></span></p>
+        <p><strong>{{ 'app.currentLocation' | translate }}: </strong> <span [innerHTML]="character.location.name | translate"></span></p>
       </ng-container>
 
       </div>

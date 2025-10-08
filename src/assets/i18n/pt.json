@@ -9,6 +9,18 @@
     "backToHome": "Voltar ao início",
     "emptySearch": "Nada foi encontrado",
     "tryAgain": "Tente realizar uma nova busca",
-    "back": "Voltar"
-    }
+    "back": "Voltar",
+    "status": "Status",
+    "gender": "Gênero",
+    "origin": "Origem",
+    "currentLocation": "Localização Atual"
+    },
+    "Human": "Humano",
+    "Alien": "Alienígena",
+    "Alive": "Vivo",
+    "Dead": "Morto",
+    "unknown": "Desconhecido",
+    "Male": "Masculino",
+    "Female": "Feminino",
+    "Earth": "Terra"
 }
