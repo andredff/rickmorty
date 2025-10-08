@@ -1,12 +1,13 @@
 <ng-container *ngIf="character$ | async as character; else loading">
   <div class="character-detail">
-    <button [routerLink]="'/'">{{ 'app.back' | translate }}</button>
     <app-character-card
       [character]="character"
       [isFavorite]="isFavorite(character.id)"
       [showAdditionalInfo]="true"
       (action)="toggleFavorite($event)"
       ></app-character-card>
+      <button [routerLink]="'/'">{{ 'app.back' | translate }}</button>
+
   </div>
 </ng-container>
 

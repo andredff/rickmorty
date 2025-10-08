@@ -5,9 +5,10 @@
   align-self: center;
   align-items: center;
   justify-content: center;
+  margin: 28px 0;
 
   button {
-    margin-bottom: 28px;
+    margin-top: 28px;
     background-color: var(--color-white);
     color: var(--button-text-active);
     border: none;
