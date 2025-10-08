@@ -1,60 +1,110 @@
 # AppRickMorty
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+Este é um projeto Angular que consome a API pública de Rick and Morty para exibir informações sobre os personagens, incluindo detalhes, favoritos e muito mais.
 
-## Development server
+A aplicação está atualmente rodando em produção no seguinte link:
 
-To start a local development server, run:
+🔗 **[Acesse a aplicação aqui](https://rickmorty-sigma-sandy.vercel.app/)**
 
+---
+
+## 🚀 Como Inicializar o Projeto Localmente
+
+Siga os passos abaixo para instalar e executar o projeto localmente:
+
+### **1. Pré-requisitos**
+
+Certifique-se de que você possui as seguintes ferramentas instaladas em sua máquina:
+- **Node.js** (versão 16 ou superior)
+- **npm** 
+- **Angular CLI** 
+
+Para instalar o Angular CLI globalmente, execute:
+```bash
+npm install -g @angular/cli
+```
+
+### **2. Clonar o Repositório**
+
+Clone este repositório para sua máquina local:
+```bash
+git clone https://github.com/andredff/rickmorty.git
+```
+
+### **3. Instalar Dependências**
+
+Instale todas as dependências do projeto:
+```bash
+npm install
+```
+
+### **4. Executar o Servidor de Desenvolvimento**
+
+Inicie o servidor de desenvolvimento:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Abra o navegador e acesse:
+```
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+A aplicação será recarregada automaticamente sempre que você modificar os arquivos fonte.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 🛠️ Comandos Úteis
 
-To build the project run:
+### **Gerar um Build de Produção**
 
+Para gerar um build otimizado para produção, execute:
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os artefatos do build serão gerados na pasta `dist/`.
 
-## Running unit tests
+### **Executar Testes Unitários**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+Para executar os testes unitários com o Karma, use:
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+### **Executar Testes End-to-End**
 
-For end-to-end (e2e) testing, run:
-
+Para executar testes end-to-end (e2e), use:
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🌐 Deploy
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# rickmorty
+A aplicação está hospedada na plataforma **Vercel** e pode ser acessada no seguinte link:
+
+🔗 **[https://rickmorty-sigma-sandy.vercel.app/](https://rickmorty-sigma-sandy.vercel.app/)**
+
+Para realizar o deploy, siga os passos abaixo:
+
+1. Certifique-se de que o build de produção foi gerado:
+   ```bash
+   ng build
+   ```
+
+2. Faça o upload dos arquivos da pasta `dist/` para a plataforma de hospedagem de sua escolha (neste caso, Vercel).
+
+---
+
+## 📚 Recursos Adicionais
+
+- **Documentação Angular CLI**: [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli)
+- **API Rick and Morty**: [Rick and Morty API](https://rickandmortyapi.com/)
+
+---
+
+## 📝 Licença
+
+Este projeto é de uso livre. Sinta-se à vontade para contribuir ou utilizá-lo como base para seus próprios projetos.
