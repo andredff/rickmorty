@@ -24,7 +24,6 @@ export class FavoritesService {
     return this.favorites.value.length; // Retorna a contagem de favoritos
   }
 
-  // Adiciona o método isFavorite
   isFavorite(characterId: number): boolean {
     return this.favorites.value.some((fav) => fav.id === characterId);
   }
