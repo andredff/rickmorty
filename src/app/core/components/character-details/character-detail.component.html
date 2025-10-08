@@ -4,6 +4,7 @@
     <app-character-card
       [character]="character"
       [isFavorite]="isFavorite(character.id)"
+      [showAdditionalInfo]="true"
       (action)="toggleFavorite($event)"
       ></app-character-card>
   </div>

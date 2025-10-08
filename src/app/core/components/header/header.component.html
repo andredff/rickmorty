@@ -5,19 +5,19 @@
 
   <div class="button-group">
     <app-button
+      [type]="'button'"
       [buttonClass]="'first-button'"
-      type="button"
-      label="Inicio"
-      icon="home"
-      link="/"
+      [label]="'Inicio'"
+      [icon]="'home'"
+      [link]="'/'"
       [isActive]="checkActiveRoute('/')"
     />
     <app-button
+      [type]="'button'"
       [buttonClass]="'last-button'"
-      type="button"
-      label="Favoritos"
-      icon="favorite"
-      link="favoritos"
+      [label]="'Favoritos'"
+      [icon]="'favorite'"
+      [link]="'favoritos'"
       [count]="(favoritesCount$ | async) ?? 0"
       [isActive]="checkActiveRoute('/favoritos')"
     />

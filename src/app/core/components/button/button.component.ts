@@ -10,13 +10,12 @@ import { RouterLink } from '@angular/router';
 })
 export class ButtonComponent implements OnInit {
   @Input() buttonClass: string = '';
-  label = input<string>();
-  count = input<number | undefined>();
-  link = input<string | string[]>();
-  isActive = input<boolean>(false);
-  type = input<string>('button');
-  icon = input<string>('');
-
+  @Input() label!: string; // Tornado obrigatório com "!"
+  @Input() count?: number;
+  @Input() link!: string | string[];
+  @Input() isActive: boolean = false;
+  @Input() type: string = 'button';
+  @Input() icon: string = '';
 
   ngOnInit(): void {
     if (!this.label) {

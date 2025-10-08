@@ -1,7 +1,5 @@
 .character-detail {
   text-align: center;
-  padding: 20px;
-  color: black; /* Certifique-se de que o texto está visível */
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -9,7 +7,7 @@
   justify-content: center;
 
   button {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     background-color: var(--color-white);
     color: var(--button-text-active);
     border: none;

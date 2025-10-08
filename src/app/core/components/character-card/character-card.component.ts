@@ -14,6 +14,7 @@ export class CharacterCardComponent {
   @Input() character: any;
   @Input() isFavorite: boolean = false;
   @Input() actionLabel: string = 'Add';
+  @Input() showAdditionalInfo: boolean = false;
   @Output() action = new EventEmitter<any>();
 
   onAction(): void {

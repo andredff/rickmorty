@@ -1,9 +1,9 @@
-<button [routerLink]="link()" [type]="type()" [ngClass]="[buttonClass]" [class.active]="isActive()">
+<button [routerLink]="link" [type]="type" [ngClass]="[buttonClass]" [class.active]="isActive">
   <div style="font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 20">
-    <span class="material-symbols-outlined"> {{ icon() }} </span>
-    <span>{{ label() }}</span>
-    <span *ngIf="count()" class="count-badge">
-      <label>{{ count() }}</label>
+    <span class="material-symbols-outlined"> {{ icon }} </span>
+    <span>{{ label }}</span>
+    <span *ngIf="count" class="count-badge">
+      <label>{{ count }}</label>
     </span>
   </div>
 </button>

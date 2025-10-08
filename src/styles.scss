@@ -9,19 +9,27 @@ body, html {
 :root {
   --font-poppins: "Poppins", sans-serif;
   --font-creepster: 'Creepster', regular;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 
   --color-primary: #FAFAFA;
   --color-secondary: #A4A4A4;
   --color-white: #FFFFFF;
-
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
 
   --button-bg-active: #ffffff;
   --button-text-active: #0a0a0a;
   --button-border-active: #3d3d3d;
   --badge-text: #0a0a0a;
   --icon-color: #3d3d3d;
+  --button-padding: 8px 16px;
+  --button-height: 40px;
+  --button-gap: 4px;
+  --button-margin: 0 auto;
+  --count-badge-font-size: 12px;
+  --count-badge-size: 20px;
+  --count-badge-margin-left: 8px;
+  --icon-font-size: 20px;
+  --button-border-radius: 12px;
 }
 
 .link {

@@ -1,3 +1,4 @@
+
 button {
   cursor: pointer;
   font-family: var(--font-poppins);
@@ -6,21 +7,20 @@ button {
   color: var(--color-secondary);
   background-color: transparent;
   border: 1px solid var(--color-secondary);
-  padding: 8px 16px;
-  height: 40px;
+  padding: var(--button-padding);
+  height: var(--button-height);
   text-align: center;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  margin: 0 auto;
+  gap: var(--button-gap);
+  margin: var(--button-margin);
   transition: background-color 0.3s ease, color 0.3s ease;
 
   div {
     display: flex;
     align-items: center;
-
   }
 
   &.active {
@@ -34,14 +34,14 @@ button {
 }
 
 .first-button {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-top-left-radius: var(--button-border-radius);
+  border-bottom-left-radius: var(--button-border-radius);
   border-right: none;
 }
 
 .last-button {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-top-right-radius: var(--button-border-radius);
+  border-bottom-right-radius: var(--button-border-radius);
   border-left: none;
 }
 
@@ -50,23 +50,23 @@ button {
   background-color: var(--color-white);
   color: var(--badge-text);
   font-weight: 700;
-  font-size: 12px;
-  width: 20px;
-  height: 20px;
+  font-size: var(--count-badge-font-size);
+  width: var(--count-badge-size);
+  height: var(--count-badge-size);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 8px;
+  margin-left: var(--count-badge-margin-left);
   transition: border 0.3s ease;
 
   label {
-    font-size: 12px;
+    font-size: var(--count-badge-font-size);
     font-weight: 600;
   }
 }
 
 .material-symbols-outlined {
-  font-size: 20px;
-  padding: 0 8px 0 0;
+  font-size: var(--icon-font-size);
+  padding: 0 var(--button-gap) 0 0;
 }
