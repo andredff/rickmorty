@@ -1,0 +1,41 @@
+<div class="character-card">
+  <!-- Ícone de coração no canto superior direito -->
+  <div class="favorite-icon" (click)="onAction()">
+    <span
+      class="material-symbols-outlined"
+      [ngStyle]="{
+        'font-variation-settings': isFavorite
+          ? '\'FILL\' 1, \'wght\' 700, \'GRAD\' 0, \'opsz\' 48'
+          : '\'FILL\' 0, \'wght\' 600, \'GRAD\' 0, \'opsz\' 48',
+        color: isFavorite ? 'black' : '#FAFAFA'
+      }"
+    >
+      favorite
+    </span>
+  </div>
+
+  <!-- Imagem e informações do personagem -->
+  <div [routerLink]="['/personagem', character.id]" class="card-content">
+    <img
+      [src]="character.image"
+      [alt]="character.name"
+      class="character-image"
+    />
+    <div class="character-info">
+      <div>
+        <h2>{{ character.name | truncate : 19 }}</h2>
+        <h3> {{ character.species }}</h3>
+
+      <ng-container *ngIf="showAdditionalInfo">
+        <p><strong>Type:</strong> {{ character.type }}</p>
+        <p><strong>Status:</strong> {{ character.status }}</p>
+        <p><strong>Gênero:</strong> {{ character.gender }}</p>
+        <p><strong>Status:</strong> {{ character.status }}</p>
+        <p><strong>Origem:</strong> {{ character.origin.name }}</p>
+        <p><strong>Localização Atual:</strong> {{ character.location.name }}</p>
+      </ng-container>
+
+      </div>
+    </div>
+  </div>
+</div>

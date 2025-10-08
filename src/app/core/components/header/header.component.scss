@@ -1,24 +1,25 @@
 .header {
-  background-color: #0A0A0A;
-  border: bottom 1px solid #3D3D3D;
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #3d3d3d;
   height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 24px;
 
+  .logo {
+    img {
+      height: 64px;
+    }
+  }
+
   .button-group {
     display: flex;
     gap: 0;
   }
+
 }
 
 p {
   color: white;
-}
-
-.logo {
-  img {
-    height: 64px;
-  }
 }

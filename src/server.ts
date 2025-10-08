@@ -36,6 +36,19 @@ app.use(
 );
 
 /**
+ * Define getPrerenderParams for dynamic routes
+ */
+export function getPrerenderParams() {
+  return {
+    'personagem/:id': [
+      { id: '1' }, // Rick Sanchez
+      { id: '2' }, // Morty Smith
+      { id: '3' }, // Summer Smith
+    ],
+  };
+}
+
+/**
  * Handle all other requests by rendering the Angular application.
  */
 app.use((req, res, next) => {

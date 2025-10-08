@@ -1,0 +1,19 @@
+<ng-container *ngIf="(favorites$ | async) as favorites">
+  <div *ngIf="favorites.length > 0; else noResults" class="favorites-list">
+    <app-character-card
+      *ngFor="let character of favorites"
+      [character]="character"
+      [isFavorite]="true"
+      [actionLabel]="'Remove'"
+      (action)="removeFavorite($event.id)"
+    ></app-character-card>
+  </div>
+</ng-container>
+
+<ng-template #noResults>
+  <div class="no-results">
+    <p>Parece que você ainda não tem favoritos</p>
+    <p>Volte à página e escolha os melhores para você.</p>
+    <button [routerLink]="'/'"> Voltar ao início </button>
+  </div>
+</ng-template>

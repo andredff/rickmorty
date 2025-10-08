@@ -1,38 +1,72 @@
+
 button {
   cursor: pointer;
-  border-radius: 8px;
   font-family: var(--font-poppins);
-}
-
-.primary-button {
-  background-color: var(--color-white);
   font-weight: 600;
-  padding: 4px 16px;
-  border: none;
-  color: #0A0A0A;
-  // width: 99px;
-  height: 40px;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  text-decoration: none;
   font-size: 14px;
-}
-
-.secondary-button {
-  background-color: transparent;
-  font-weight: 600;
-  padding: 4px 16px;
-  border: none;
   color: var(--color-secondary);
-  // width: 99px;
-  height: 40px;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
+  background-color: transparent;
+  border: 1px solid var(--color-secondary);
+  padding: var(--button-padding);
+  height: var(--button-height);
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
-  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  margin: var(--button-margin);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  &.active {
+    background-color: var(--button-bg-active);
+    color: var(--badge-text);
+
+    .count-badge {
+      border: 1px solid var(--icon-color);
+    }
+  }
+}
+
+.first-button {
+  border-top-left-radius: var(--button-border-radius);
+  border-bottom-left-radius: var(--button-border-radius);
+  border-right: none;
+}
+
+.last-button {
+  border-top-right-radius: var(--button-border-radius);
+  border-bottom-right-radius: var(--button-border-radius);
+  border-left: none;
+}
+
+.count-badge {
+  border: 1px solid var(--color-white);
+  background-color: var(--color-white);
+  color: var(--badge-text);
+  font-weight: 700;
+  font-size: var(--count-badge-font-size);
+  width: var(--count-badge-size);
+  height: var(--count-badge-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--count-badge-margin-left);
+  transition: border 0.3s ease;
+
+  label {
+    font-size: var(--count-badge-font-size);
+    font-weight: 600;
+  }
+}
+
+.material-symbols-outlined {
+  font-size: var(--icon-font-size);
+  padding: 0 var(--button-gap) 0 0;
 }

@@ -1,14 +1,21 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './core/pages/home/home.component';
-import { FavoritesComponent } from './core/pages/favorites/favorites.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'favoritos',
-    component: FavoritesComponent
-  }
+    loadChildren: () =>
+      import('./core/pages/favorites/favorites.module').then(
+        (m) => m.FavoritesModule
+      ),
+  },
+  {
+    path: 'personagem/:id',
+    loadChildren: () =>
+      import('./core/pages/details/details.module').then((m) => m.DetailsModule),
+  },
 ];

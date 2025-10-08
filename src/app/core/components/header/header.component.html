@@ -1,10 +1,25 @@
 <div class="header">
   <div class="logo">
-    <img src="/assets/logo.png" alt="">
+    <img src="/assets/logo.png" alt="" />
   </div>
 
   <div class="button-group">
-    <app-button type="button" label="Inicio" buttonType="primary" link="/" [borderRightRadius]="false" />
-    <app-button type="button" label="Favoritos" buttonType="secondary" link="favoritos" [count]="(favoritesCount$ | async) ?? 0"  [borderLeftRadius]="false" />
+    <app-button
+      [type]="'button'"
+      [buttonClass]="'first-button'"
+      [label]="'Inicio'"
+      [icon]="'home'"
+      [link]="'/'"
+      [isActive]="checkActiveRoute('/')"
+    />
+    <app-button
+      [type]="'button'"
+      [buttonClass]="'last-button'"
+      [label]="'Favoritos'"
+      [icon]="'favorite'"
+      [link]="'favoritos'"
+      [count]="(favoritesCount$ | async) ?? 0"
+      [isActive]="checkActiveRoute('/favoritos')"
+    />
   </div>
 </div>

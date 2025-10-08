@@ -1,0 +1,20 @@
+.character-detail {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    margin-bottom: 28px;
+    background-color: var(--color-white);
+    color: var(--button-text-active);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+}
