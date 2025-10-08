@@ -1,5 +1,4 @@
 <div class="character-card">
-  <!-- Ícone de coração no canto superior direito -->
   <div class="favorite-icon" (click)="onAction()">
     <span
       class="material-symbols-outlined"
@@ -14,7 +13,6 @@
     </span>
   </div>
 
-  <!-- Imagem e informações do personagem -->
   <div [routerLink]="['/personagem', character.id]" class="card-content">
     <img
       [src]="character.image"
