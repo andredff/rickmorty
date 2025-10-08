@@ -2,10 +2,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
   gap: 16px;
-  justify-content: left;
+  justify-content: center;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
+    justify-content: left;
   }
 }
 
