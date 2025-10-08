@@ -4,11 +4,12 @@ import { FavoritesService } from '../../services/favorites.service';
 import { Observable } from 'rxjs';
 import { CharacterCardComponent } from '../character-card/character-card.component';
 import { Router, RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-favorite-list',
   standalone: true,
-  imports: [CommonModule, CharacterCardComponent, RouterLink],
+  imports: [CommonModule, CharacterCardComponent, RouterLink, TranslatePipe],
   templateUrl: './favorites-list.component.html',
   styleUrls: ['./favorites-list.component.scss'],
 })

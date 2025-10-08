@@ -5,11 +5,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CharacterCardComponent } from '../character-card/character-card.component';
 import { FavoritesService } from '../../services/favorites.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-character-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, CharacterCardComponent],
+  imports: [CommonModule, RouterLink, CharacterCardComponent, TranslatePipe],
   templateUrl: './character-detail.component.html',
   styleUrls: ['./character-detail.component.scss'],
 })

@@ -1,0 +1,14 @@
+{
+  "app": {
+    "inicio": "Home",
+    "home": "Home",
+    "favorites": "Favorites",
+    "search": "Search",
+    "emptyFavorites": "You don't have favorite characters yet.",
+    "addFavorites": "Go back home and Add your favorite characters to see them here.",
+    "backToHome": "Back to Home",
+    "emptySearch": "No results found.",
+    "tryAgain": "Try searching with another term.",
+    "back": "Back"
+  }
+}

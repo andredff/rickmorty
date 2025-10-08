@@ -1,7 +1,7 @@
 <div class="search-container">
   <input
     type="text"
-    placeholder="Pesquisar"
+    [attr.placeholder]="'app.search' | translate"
     (input)="search($event.target.value)"
   />
 </div>

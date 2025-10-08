@@ -1,4 +1,11 @@
 <app-header></app-header>
 <div class="container">
+  <div class="language-select">
+    <select [(ngModel)]="currentLanguage" (change)="changeLanguage(currentLanguage)">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
   <router-outlet></router-outlet>
 </div>

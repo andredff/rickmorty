@@ -1,0 +1,14 @@
+{
+  "app": {
+    "inicio": "Início",
+    "home": "Início",
+    "favorites": "Favoritos",
+    "search": "Pesquisar",
+    "emptyFavorites": "Parece que você ainda não tem favoritos.",
+    "addFavorites": "Volte à página e escolha os melhores para você.",
+    "backToHome": "Voltar ao início",
+    "emptySearch": "Nada foi encontrado",
+    "tryAgain": "Tente realizar uma nova busca",
+    "back": "Voltar"
+    }
+}

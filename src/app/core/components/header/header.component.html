@@ -7,7 +7,7 @@
     <app-button
       [type]="'button'"
       [buttonClass]="'first-button'"
-      [label]="'Inicio'"
+      [label]="'app.home'"
       [icon]="'home'"
       [link]="'/'"
       [isActive]="checkActiveRoute('/')"
@@ -15,7 +15,7 @@
     <app-button
       [type]="'button'"
       [buttonClass]="'last-button'"
-      [label]="'Favoritos'"
+      [label]="'app.favorites'"
       [icon]="'favorite'"
       [link]="'favoritos'"
       [count]="(favoritesCount$ | async) ?? 0"

@@ -3,3 +3,44 @@
   margin: 0 auto;
   padding: 16px;
 }
+
+.language-select {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+
+  select {
+    width: 100%;
+    padding: 4px 14px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #888;
+    }
+
+    &:focus {
+      border-color: #555;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #333;
+    pointer-events: none;
+  }
+}

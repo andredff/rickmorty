@@ -4,17 +4,18 @@ import { CharacterService } from '../../services/character.service';
 import { FavoritesService } from '../../services/favorites.service';
 import { Observable } from 'rxjs';
 import { CharacterCardComponent } from '../character-card/character-card.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-character-list',
   standalone: true,
-  imports: [CommonModule, CharacterCardComponent],
+  imports: [CommonModule, CharacterCardComponent, TranslatePipe],
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.scss'],
 })
 export class CharacterListComponent implements OnInit {
-  characters$: Observable<any>; // Inscreve-se nos resultados da busca
-  isLoading: boolean = false; // Controle para evitar chamadas duplicadas
+  characters$: Observable<any>;
+  isLoading: boolean = false;
 
   constructor(
     private characterService: CharacterService,
@@ -24,7 +25,6 @@ export class CharacterListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Carrega os personagens ao inicializar o componente
     this.characterService.searchCharacters('', true).subscribe({
       next: () => {
         console.log('Initial characters loaded');
@@ -35,7 +35,6 @@ export class CharacterListComponent implements OnInit {
     });
   }
 
-  // Adiciona ou remove um personagem dos favoritos
   toggleFavorite(character: any): void {
     if (this.favoritesService.isFavorite(character.id)) {
       this.favoritesService.removeFavorite(character.id);
@@ -44,12 +43,10 @@ export class CharacterListComponent implements OnInit {
     }
   }
 
-  // Verifica se um personagem está nos favoritos
   isFavorite(characterId: number): boolean {
     return this.favoritesService.isFavorite(characterId);
   }
 
-  // Evento de rolagem para carregar mais personagens
   @HostListener('window:scroll', [])
   onScroll(): void {
     const scrollPosition = window.innerHeight + window.scrollY;
@@ -61,14 +58,14 @@ export class CharacterListComponent implements OnInit {
   }
 
   private loadMoreCharacters(): void {
-    this.isLoading = true; // Define como carregando
+    this.isLoading = true;
     this.characterService.searchCharacters('', false).subscribe({
       next: () => {
-        this.isLoading = false; // Libera para novas chamadas após a conclusão
+        this.isLoading = false;
       },
       error: (err) => {
         console.error('Error loading more characters:', err);
-        this.isLoading = false; // Libera mesmo em caso de erro
+        this.isLoading = false;
       },
     });
   }

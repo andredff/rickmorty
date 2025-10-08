@@ -12,8 +12,8 @@
 
 <ng-template #noResults>
   <div class="no-results">
-    <p>Parece que você ainda não tem favoritos</p>
-    <p>Volte à página e escolha os melhores para você.</p>
-    <button [routerLink]="'/'"> Voltar ao início </button>
+    <p>{{ 'app.emptyFavorites' | translate }}</p>
+    <p>{{ 'app.addFavorites' | translate }}</p>
+    <button [routerLink]="'/'"> {{ 'app.backToHome' | translate}} </button>
   </div>
 </ng-template>

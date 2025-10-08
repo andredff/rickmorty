@@ -27,7 +27,7 @@
         <h3> {{ character.species }}</h3>
 
       <ng-container *ngIf="showAdditionalInfo">
-        <p><strong>Type:</strong> {{ character.type }}</p>
+        <p *ngIf="character.type"><strong>Type:</strong> {{ character.type }}</p>
         <p><strong>Status:</strong> {{ character.status }}</p>
         <p><strong>Gênero:</strong> {{ character.gender }}</p>
         <p><strong>Status:</strong> {{ character.status }}</p>
