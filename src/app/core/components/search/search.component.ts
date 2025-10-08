@@ -13,21 +13,19 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  private searchTerms = new Subject<string>(); // Fluxo de termos de busca
+  private searchTerms = new Subject<string>();
 
   constructor(private characterService: CharacterService) {
     this.setupSearchSubscription();
   }
 
-  // Configura o fluxo de busca
   private setupSearchSubscription(): void {
     this.searchTerms.pipe(
-      debounceTime(300), // Aguarda 300ms após o último evento
-      distinctUntilChanged() // Ignora se o termo for o mesmo que o anterior
+      debounceTime(300),
+      distinctUntilChanged()
     ).subscribe((term) => this.performSearch(term));
   }
 
-  // Realiza a busca inicial
   private performSearch(term: string): void {
     this.characterService.searchCharacters(term.trim(), true).subscribe({
       next: () => {
@@ -43,7 +41,6 @@ export class SearchComponent {
     });
   }
 
-  // Método chamado no evento de input
   search(term: string): void {
     this.searchTerms.next(term);
   }

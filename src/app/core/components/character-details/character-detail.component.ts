@@ -21,9 +21,7 @@ export class CharacterDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, public characterService: CharacterService, public favoritesService: FavoritesService,) {}
 
   ngOnInit(): void {
-    console.log('ngOnInit called');
     this.characterId = this.route.snapshot.paramMap.get('id')!;
-    console.log('Character ID:', this.characterId);
     this.fetchCharacterDetails();
   }
 

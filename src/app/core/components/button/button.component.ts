@@ -11,7 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() buttonClass: string = '';
-  @Input() label!: string; // Tornado obrigatório com "!"
+  @Input() label!: string;
   @Input() count?: number;
   @Input() link!: string | string[];
   @Input() isActive: boolean = false;
@@ -19,7 +19,6 @@ export class ButtonComponent implements OnInit {
   @Input() icon: string = '';
 
   ngOnInit(): void {
-    console.log('ButtonComponent initialized with label:', this.label);
     if (!this.label) {
       throw new Error('The label input is required');
     }
