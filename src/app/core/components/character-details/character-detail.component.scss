@@ -5,17 +5,21 @@
   align-self: center;
   align-items: center;
   justify-content: center;
-  margin: 28px 0;
+  margin: var(--spacing-large) 0;
 
   button {
-    margin-top: 28px;
+    margin-top: var(--spacing-large);
     background-color: var(--color-white);
     color: var(--button-text-active);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-size: var(--font-size-paragraph);
+    transition: background-color var(--transition-duration) var(--transition-ease);
+
+    &:hover {
+      background-color: var(--button-bg-active);
+    }
   }
 }

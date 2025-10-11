@@ -7,29 +7,57 @@ body, html {
 }
 
 :root {
-  --font-poppins: "Poppins", sans-serif;
-  --font-creepster: 'Creepster', regular;
+  /* Tokens de fontes */
+  --font-family-poppins: 'Poppins', sans-serif;
+  --font-family-creepster: 'Creepster', cursive;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
+  --font-size-title: 24px;
+  --font-size-subtitle: 16px;
+  --font-size-paragraph: 16px;
 
-  --color-primary: #FAFAFA;
+  /* Tokens de cores */
+  --color-primary: #007bff;
   --color-secondary: #A4A4A4;
   --color-white: #FFFFFF;
+  --color-gray: #a4a4a4;
+  --color-background: #000000;
 
+  /* Tokens de botões */
   --button-bg-active: #ffffff;
   --button-text-active: #0a0a0a;
   --button-border-active: #3d3d3d;
-  --badge-text: #0a0a0a;
-  --icon-color: #3d3d3d;
   --button-padding: 8px 16px;
   --button-height: 40px;
   --button-gap: 4px;
   --button-margin: 0 auto;
+  --button-border-radius: 12px;
+
+  /* Tokens de badges */
+  --badge-text: #0a0a0a;
   --count-badge-font-size: 12px;
   --count-badge-size: 20px;
   --count-badge-margin-left: 8px;
+
+  /* Tokens de ícones */
+  --icon-color: #3d3d3d;
   --icon-font-size: 20px;
-  --button-border-radius: 12px;
+
+  /* Tokens de espaçamento */
+  --spacing-small: 8px;
+  --spacing-medium: 12px;
+  --spacing-large: 20px;
+
+  /* Tokens de borda */
+  --border-radius: 8px;
+  --border-radius-button: 5px;
+
+  /* Tokens de sombra */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Tokens de transição */
+  --transition-duration: 0.2s;
+  --transition-ease: ease;
 }
 
 .link {

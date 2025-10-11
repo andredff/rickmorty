@@ -1,11 +1,11 @@
 .header {
-  background-color: #0a0a0a;
-  border-bottom: 1px solid #3d3d3d;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--icon-color);
   height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 24px;
+  padding: var(--spacing-small) var(--spacing-large);
 
   .logo {
     img {
@@ -15,11 +15,9 @@
 
   .button-group {
     display: flex;
-    gap: 0;
   }
-
 }
 
 p {
-  color: white;
+  color: var(--color-white);
 }
