@@ -4,7 +4,7 @@
       <app-character-card
         *ngFor="let character of characters; trackBy: trackByCharacterId"
         [character]="character"
-        [isFavorite]="isFavorite(character.id)"
+        [isFavorite]="favoriteMap[character.id]"
         (action)="toggleFavorite($event)"
       ></app-character-card>
     </div>

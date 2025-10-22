@@ -27,6 +27,10 @@ export class FavoritesListComponent {
     return character.id; // Retorna o ID único do personagem
   }
 
+  onRemoveFavorite(characterId: number): void {
+    this.removeFavorite(characterId);
+  }
+
   // Remove um personagem dos favoritos
   removeFavorite(characterId: number): void {
     this.favoritesService.removeFavorite(characterId);

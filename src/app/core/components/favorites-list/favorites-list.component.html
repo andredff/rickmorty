@@ -5,7 +5,7 @@
       [character]="character"
       [isFavorite]="true"
       [actionLabel]="'Remove'"
-      (action)="removeFavorite($event.id)"
+      (action)="onRemoveFavorite(character.id)"
     ></app-character-card>
   </div>
 </ng-container>
