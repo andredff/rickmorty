@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CharacterCardComponent } from '../character-card/character-card.component';
 import { Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Character } from '../../models/characters';
 
 @Component({
   selector: 'app-favorite-list',
@@ -20,6 +21,10 @@ export class FavoritesListComponent {
     this.favorites$ = this.favoritesService.favorites$;
     this.favorites$.subscribe((favorites) => {
     });
+  }
+
+  trackByFavoriteId(index: number, character: Character): number {
+    return character.id; // Retorna o ID único do personagem
   }
 
   // Remove um personagem dos favoritos

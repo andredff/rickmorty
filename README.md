@@ -45,21 +45,9 @@ Inicie o servidor de desenvolvimento:
 ng serve
 ```
 
-<<<<<<< HEAD
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash 
-
-ng generate component component-name
-=======
 Abra o navegador e acesse:
 ```
 http://localhost:4200/
->>>>>>> 2b51a2bfc0839ef81bd08f4ab3b7e822aba7fac8
 ```
 
 A aplicação será recarregada automaticamente sempre que você modificar os arquivos fonte.

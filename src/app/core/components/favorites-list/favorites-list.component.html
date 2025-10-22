@@ -1,7 +1,7 @@
 <ng-container *ngIf="(favorites$ | async) as favorites">
   <div *ngIf="favorites.length > 0; else noResults" class="favorites-list">
     <app-character-card
-      *ngFor="let character of favorites"
+      *ngFor="let character of favorites; trackBy: trackByFavoriteId"
       [character]="character"
       [isFavorite]="true"
       [actionLabel]="'Remove'"
@@ -14,6 +14,6 @@
   <div class="no-results">
     <p>{{ 'app.emptyFavorites' | translate }}</p>
     <p>{{ 'app.addFavorites' | translate }}</p>
-    <button [routerLink]="'/'"> {{ 'app.backToHome' | translate}} </button>
+    <button [routerLink]="'/'"> {{ 'app.backToHome' | translate }} </button>
   </div>
 </ng-template>

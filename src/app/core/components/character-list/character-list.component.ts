@@ -5,6 +5,7 @@ import { FavoritesService } from '../../services/favorites.service';
 import { Observable } from 'rxjs';
 import { CharacterCardComponent } from '../character-card/character-card.component';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Character } from '../../models/characters';
 
 @Component({
   selector: 'app-character-list',
@@ -33,6 +34,10 @@ export class CharacterListComponent implements OnInit {
         console.error('Error loading initial characters:', err);
       },
     });
+  }
+
+  trackByCharacterId(index: number, character: Character): number {
+    return character.id;
   }
 
   toggleFavorite(character: any): void {
