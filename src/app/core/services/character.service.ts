@@ -44,14 +44,14 @@ export class CharacterService {
     this.currentQuery = query;
   }
 
-  private fetchCharacters(): Observable<any> {
+  private fetchCharacters(): Observable<Character> {
     const url = `${this.apiUrl}?name=${this.currentQuery}&page=${this.currentPage}`;
     return this.http.get<Character>(url).pipe(
       tap((response) => this.handleResponse(response))
     );
   }
 
-  private fetchAllCharacters(): Observable<any> {
+  private fetchAllCharacters(): Observable<Character> {
     const url = `${this.apiUrl}?page=${this.currentPage}`;
     return this.http.get<Character>(url).pipe(
       tap((response) => this.handleResponse(response))

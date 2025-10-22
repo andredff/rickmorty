@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Character } from '../models/characters';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FavoritesService {
-  private favorites = new BehaviorSubject<any[]>([]); // Lista de favoritos
+  private favorites = new BehaviorSubject<Character[]>([]); // Lista de favoritos
   favorites$ = this.favorites.asObservable(); // Observable para expor os favoritos
 
-  addFavorite(character: any): void {
+  addFavorite(character: Character): void {
     const currentFavorites = this.favorites.value;
     if (!currentFavorites.find((fav) => fav.id === character.id)) {
       this.favorites.next([...currentFavorites, character]);
