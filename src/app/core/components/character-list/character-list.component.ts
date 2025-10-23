@@ -1,35 +1,36 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharacterService } from '../../services/character.service';
 import { FavoritesService } from '../../services/favorites.service';
 import { Observable } from 'rxjs';
 import { CharacterCardComponent } from '../character-card/character-card.component';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Character } from '../../models/characters';
 
 @Component({
   selector: 'app-character-list',
   standalone: true,
-  imports: [CommonModule, CharacterCardComponent, TranslatePipe],
+  imports: [CommonModule, CharacterCardComponent],
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CharacterListComponent implements OnInit {
-  characters$: Observable<Character[]>; // Tipagem ajustada para maior clareza
-  isLoading: boolean = false;
-  favoriteMap: { [id: number]: boolean } = {}; // Mapa para otimizar o acesso aos favoritos
+  characters: Character[] = [];
+  favoriteMap: { [id: number]: boolean } = {};
+  emptySearchText: string = '';
+  tryAgainText: string = '';
 
   constructor(
     private characterService: CharacterService,
-    private favoritesService: FavoritesService
-  ) {
-    this.characters$ = this.characterService.results$;
-  }
+    private favoritesService: FavoritesService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
-    // Inicializa os personagens e o mapa de favoritos
-    this.loadInitialCharacters();
+    this.loadCharacters();
     this.initializeFavoriteMap();
+    this.preTranslateTexts();
   }
 
   // Método para rastrear itens no *ngFor
@@ -38,7 +39,7 @@ export class CharacterListComponent implements OnInit {
   }
 
   // Alterna o estado de favorito de um personagem
-  toggleFavorite(character: Character): void {
+  onToggleFavorite(character: Character): void {
     if (this.favoriteMap[character.id]) {
       this.favoritesService.removeFavorite(character.id);
       delete this.favoriteMap[character.id];
@@ -46,6 +47,13 @@ export class CharacterListComponent implements OnInit {
       this.favoritesService.addFavorite(character);
       this.favoriteMap[character.id] = true;
     }
+  }
+
+  // Carrega os personagens iniciais
+  private loadCharacters(): void {
+    this.characterService.results$.subscribe((characters) => {
+      this.characters = characters;
+    });
   }
 
   // Inicializa o mapa de favoritos
@@ -58,40 +66,9 @@ export class CharacterListComponent implements OnInit {
     });
   }
 
-  // Carrega os personagens iniciais
-  private loadInitialCharacters(): void {
-    this.characterService.searchCharacters('', true).subscribe({
-      next: () => {
-        console.log('Initial characters loaded');
-      },
-      error: (err) => {
-        console.error('Error loading initial characters:', err);
-      },
-    });
-  }
-
-  // Detecta o scroll para carregar mais personagens
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    const scrollPosition = window.innerHeight + window.scrollY;
-    const scrollThreshold = document.body.offsetHeight - 100;
-
-    if (scrollPosition >= scrollThreshold && !this.isLoading) {
-      this.loadMoreCharacters();
-    }
-  }
-
-  // Carrega mais personagens ao atingir o final da página
-  private loadMoreCharacters(): void {
-    this.isLoading = true;
-    this.characterService.searchCharacters('', false).subscribe({
-      next: () => {
-        this.isLoading = false;
-      },
-      error: (err) => {
-        console.error('Error loading more characters:', err);
-        this.isLoading = false;
-      },
-    });
+  // Pré-traduz os textos para evitar chamadas desnecessárias ao pipe translate
+  private preTranslateTexts(): void {
+    this.emptySearchText = this.translate.instant('app.emptySearch');
+    this.tryAgainText = this.translate.instant('app.tryAgain');
   }
 }
