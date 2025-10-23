@@ -9,7 +9,7 @@ import { Character } from '../models/characters';
 })
 export class CharacterService {
   private readonly apiUrl = 'https://rickandmortyapi.com/api/character';
-  private searchResults = new BehaviorSubject<any[]>([]);
+  private searchResults = new BehaviorSubject<Character[]>([]);
   private currentPage = 1;
   private hasMoreResults = true;
   private currentQuery = '';
@@ -17,7 +17,7 @@ export class CharacterService {
   results$ = this.searchResults.asObservable();
   constructor(private http: HttpClient) {}
 
-  searchCharacters(query: string, reset: boolean = false): Observable<any> {
+  searchCharacters(query: string, reset: boolean = false): Observable<Character> {
     if (reset) {
       this.resetSearch(query);
     }
