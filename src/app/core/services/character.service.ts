@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -8,6 +8,8 @@ import { Character } from '../models/characters';
   providedIn: 'root',
 })
 export class CharacterService {
+  private http = inject(HttpClient);
+
   private readonly apiUrl = 'https://rickandmortyapi.com/api/character';
   private searchResults = new BehaviorSubject<Character[]>([]);
   private currentPage = 1;
@@ -15,7 +17,6 @@ export class CharacterService {
   private currentQuery = '';
 
   results$ = this.searchResults.asObservable();
-  constructor(private http: HttpClient) {}
 
   searchCharacters(query: string, reset: boolean = false): Observable<Character> {
     if (reset) {

@@ -5,6 +5,7 @@ import { Character } from '../models/characters';
 @Injectable({
   providedIn: 'root',
 })
+
 export class FavoritesService {
   private favorites = new BehaviorSubject<Character[]>([]); // Lista de favoritos
   favorites$ = this.favorites.asObservable(); // Observable para expor os favoritos
